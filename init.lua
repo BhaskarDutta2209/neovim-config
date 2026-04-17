@@ -867,6 +867,14 @@ require('lazy').setup({
       -- default behavior. For example, here we set the section for
       -- cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_git = function()
+        local head = vim.b.gitsigns_status_dict and vim.b.gitsigns_status_dict.head
+        if not head or head == '' then return '' end
+
+        -- Truncate logic: if > 10 chars, take first 10 and add '...'
+        if #head > 10 then return ' ' .. head:sub(1, 10) .. '...' end
+        return ' ' .. head
+      end
       statusline.section_location = function() return '%2l:%-2v' end
 
       -- ... and there is more!
