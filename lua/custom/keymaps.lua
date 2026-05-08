@@ -20,7 +20,9 @@ M.setup = function()
     }
   end, { desc = '[S]earch [M]odified buffers' })
 
-  -- Add more custom keymaps below...
+  -- Key bindings for quick fix
+  vim.keymap.set('n', '<leader>c]', '<cmd>cnext<CR>', { desc = 'Next in quick fix list' })
+  vim.keymap.set('n', '<leader>c[', '<cmd>cprev<CR>', { desc = 'Prev in quick fix list' })
 end
 
 return M
