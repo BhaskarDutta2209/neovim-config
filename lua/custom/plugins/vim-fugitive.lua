@@ -4,8 +4,8 @@ return {
     { '<leader>G', ':Gvdiffsplit!<CR>', desc = 'Open vertical merge window' },
 
     -- Run these from the MIDDLE buffer during a merge
-    { '<leader>gj', ':diffget //3<CR>', desc = 'Get change from RIGHT (theirs)' },
-    { '<leader>gf', ':diffget //2<CR>', desc = 'Get change from LEFT (ours)' },
+    { '<leader>gk', ':diffget //3<CR>', desc = 'Get change from RIGHT (theirs)' },
+    { '<leader>gj', ':diffget //2<CR>', desc = 'Get change from LEFT (ours)' },
 
     -- Navigation
     { ']c', ']c', desc = 'Next diff hunk' },
