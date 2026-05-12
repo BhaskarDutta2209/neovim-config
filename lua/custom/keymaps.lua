@@ -23,6 +23,13 @@ M.setup = function()
   -- Key bindings for quick fix
   vim.keymap.set('n', '<leader>c]', '<cmd>cnext<CR>', { desc = 'Next in quick fix list' })
   vim.keymap.set('n', '<leader>c[', '<cmd>cprev<CR>', { desc = 'Prev in quick fix list' })
+
+  -- Key binding for searching selected word:
+  vim.keymap.set('v', '<leader>sv', function()
+    vim.cmd 'noau normal! "vy"'
+    local text = vim.fn.getreg 'v'
+    require('telescope.builtin').grep_string { search = text }
+  end, { desc = '[S]earch [V]isual selection' })
 end
 
 return M
